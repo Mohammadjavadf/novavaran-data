@@ -1,0 +1,44 @@
+@use '../abstracts/variables' as *;
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-3;
+  color: var(--color-primary);
+  transition: color $transition-fast;
+
+  &__mark {
+    display: inline-flex;
+    color: var(--color-accent);
+    flex-shrink: 0;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.15;
+
+    strong {
+      font-size: $fs-base;
+      font-weight: 800;
+      color: var(--text-primary);
+      letter-spacing: -0.01em;
+    }
+
+    small {
+      font-size: 0.65rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      letter-spacing: 0.14em;
+      direction: ltr;
+    }
+  }
+
+  &--light {
+    .logo__text strong { color: #fff; }
+    .logo__text small { color: rgba(255, 255, 255, 0.55); }
+  }
+
+  &:hover .logo__mark { transform: rotate(-4deg); }
+  &__mark { transition: transform $transition-base; }
+}

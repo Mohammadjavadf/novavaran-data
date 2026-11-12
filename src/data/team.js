@@ -1,0 +1,58 @@
+export const teamMembers = [
+  {
+    name: 'علی رضایی',
+    role: 'بنیان‌گذار و مدیرعامل',
+    bio: 'بیش از ۱۰ سال تجربه در رهبری تیم‌های فنی و ساخت محصولات نرم‌افزاری.',
+    image: 'https://i.pravatar.cc/400?img=12',
+    socials: { linkedin: '#', github: '#', twitter: '#' },
+  },
+  {
+    name: 'مریم حسینی',
+    role: 'مدیر فنی (CTO)',
+    bio: 'متخصص معماری نرم‌افزار و مقیاس‌پذیری سیستم‌های توزیع‌شده.',
+    image: 'https://i.pravatar.cc/400?img=47',
+    socials: { linkedin: '#', github: '#', twitter: '#' },
+  },
+  {
+    name: 'سعید کریمی',
+    role: 'سرپرست تیم فرانت‌اند',
+    bio: 'عاشق تجربه کاربری و طراحی رابط‌های مدرن با React و TypeScript.',
+    image: 'https://i.pravatar.cc/400?img=33',
+    socials: { linkedin: '#', github: '#', twitter: '#' },
+  },
+  {
+    name: 'زهرا نوری',
+    role: 'سرپرست تیم بک‌اند',
+    bio: 'متخصص Node.js و پایگاه داده، با تمرکز بر امنیت و عملکرد.',
+    image: 'https://i.pravatar.cc/400?img=44',
+    socials: { linkedin: '#', github: '#', twitter: '#' },
+  },
+  {
+    name: 'محمد صادقی',
+    role: 'مهندس DevOps',
+    bio: 'مسئول زیرساخت ابری، CI/CD و پایداری سیستم‌ها.',
+    image: 'https://i.pravatar.cc/400?img=15',
+    socials: { linkedin: '#', github: '#', twitter: '#' },
+  },
+  {
+    name: 'نگار احمدی',
+    role: 'طراح محصول',
+    bio: 'طراحی تجربه کاربری و رابط‌های زیبا با تمرکز بر دسترسی‌پذیری.',
+    image: 'https://i.pravatar.cc/400?img=26',
+    socials: { linkedin: '#', github: '#', twitter: '#' },
+  },
+  {
+    name: 'امیر تهرانی',
+    role: 'مهندس داده',
+    bio: 'ساخت pipeline‌های داده و مدل‌های یادگیری ماشین.',
+    image: 'https://i.pravatar.cc/400?img=68',
+    socials: { linkedin: '#', github: '#', twitter: '#' },
+  },
+  {
+    name: 'لیلا موسوی',
+    role: 'مدیر پروژه',
+    bio: 'هماهنگی تیم‌ها و ارتباط شفاف با مشتریان با متدولوژی Agile.',
+    image: 'https://i.pravatar.cc/400?img=49',
+    socials: { linkedin: '#', github: '#', twitter: '#' },
+  },
+];

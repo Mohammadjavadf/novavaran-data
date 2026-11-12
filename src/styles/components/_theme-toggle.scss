@@ -1,0 +1,26 @@
+@use '../abstracts/variables' as *;
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: $radius-md;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-primary);
+  transition: all $transition-fast;
+
+  &:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+  }
+
+  &__icon {
+    display: inline-flex;
+    transition: transform $transition-base;
+
+    &.is-active { transform: rotate(360deg); }
+  }
+}

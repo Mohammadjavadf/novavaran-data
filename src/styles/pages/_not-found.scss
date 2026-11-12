@@ -1,0 +1,56 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.not-found {
+  padding-block: $space-24;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  background:
+    radial-gradient(ellipse 70% 50% at 50% 40%, rgba(31, 138, 112, 0.08), transparent),
+    var(--bg);
+
+  &__inner {
+    text-align: center;
+    max-width: 640px;
+    margin-inline: auto;
+  }
+
+  &__code {
+    display: block;
+    font-family: $font-en;
+    font-size: clamp(6rem, 18vw, 12rem);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -0.05em;
+    background: linear-gradient(135deg, var(--color-accent), $color-primary-700);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: $space-4;
+    user-select: none;
+  }
+
+  &__title {
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: $space-4;
+  }
+
+  &__desc {
+    font-size: $fs-md;
+    color: var(--text-secondary);
+    line-height: 1.9;
+    margin-bottom: $space-8;
+  }
+
+  &__actions {
+    display: flex;
+    gap: $space-3;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    @include respond(sm) { flex-direction: column; }
+  }
+}

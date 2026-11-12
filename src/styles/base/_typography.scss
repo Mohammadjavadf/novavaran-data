@@ -1,0 +1,24 @@
+@use '../abstracts/variables' as *;
+
+body {
+  font-family: $font-fa;
+  font-size: $fs-base;
+  color: var(--text-primary);
+  background: var(--bg);
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--text-primary);
+}
+
+h1 { font-size: clamp(2rem, 4vw, $fs-5xl); }
+h2 { font-size: clamp(1.5rem, 3vw, $fs-4xl); }
+h3 { font-size: clamp(1.25rem, 2vw, $fs-2xl); }
+h4 { font-size: $fs-xl; }
+h5 { font-size: $fs-lg; }
+
+p { color: var(--text-secondary); line-height: 1.8; }
+
+::selection { background: var(--color-accent); color: white; }

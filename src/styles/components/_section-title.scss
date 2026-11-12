@@ -1,0 +1,51 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.section-title {
+  margin-bottom: $space-12;
+  max-width: 760px;
+
+  &--center {
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  &--start {
+    margin-inline: 0;
+    text-align: start;
+  }
+
+  &__eyebrow {
+    display: inline-block;
+    font-size: $fs-sm;
+    font-weight: 600;
+    color: var(--color-accent);
+    letter-spacing: 0.05em;
+    margin-bottom: $space-3;
+    text-transform: uppercase;
+  }
+
+  &__title {
+    font-size: clamp(1.6rem, 3vw, $fs-4xl);
+    font-weight: 800;
+    line-height: 1.25;
+    color: var(--text-primary);
+    margin-bottom: $space-4;
+  }
+
+  &__desc {
+    font-size: $fs-md;
+    color: var(--text-secondary);
+    line-height: 1.85;
+  }
+
+  &--light {
+    .section-title__title { color: #fff; }
+    .section-title__desc { color: rgba(255, 255, 255, 0.75); }
+    .section-title__eyebrow { color: $color-accent-300; }
+  }
+
+  @include respond(md) {
+    margin-bottom: $space-8;
+  }
+}

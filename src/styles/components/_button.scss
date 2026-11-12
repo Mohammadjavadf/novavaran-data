@@ -1,0 +1,85 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $space-2;
+  font-family: $font-fa;
+  font-weight: 600;
+  border-radius: $radius-md;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all $transition-base;
+  white-space: nowrap;
+  text-align: center;
+  line-height: 1.2;
+
+  &:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  // ---- Sizes ----
+  &--sm {
+    padding: $space-2 $space-4;
+    font-size: $fs-sm;
+  }
+
+  &--md {
+    padding: $space-3 $space-6;
+    font-size: $fs-base;
+  }
+
+  &--lg {
+    padding: $space-4 $space-8;
+    font-size: $fs-md;
+  }
+
+  &--full {
+    width: 100%;
+  }
+
+  // ---- Variants ----
+  &--primary {
+    background: var(--color-accent);
+    color: #fff;
+    box-shadow: 0 6px 18px rgba(31, 138, 112, 0.25);
+
+    &:hover {
+      background: $color-accent-600;
+      box-shadow: 0 10px 24px rgba(31, 138, 112, 0.32);
+      transform: translateY(-1px);
+    }
+
+    &:active { transform: translateY(0); }
+  }
+
+  &--secondary {
+    background: var(--color-primary);
+    color: #fff;
+
+    &:hover { opacity: 0.92; transform: translateY(-1px); }
+  }
+
+  &--outline {
+    background: transparent;
+    color: var(--text-primary);
+    border-color: var(--border);
+
+    &:hover {
+      border-color: var(--color-accent);
+      color: var(--color-accent);
+      background: var(--color-accent-soft);
+    }
+  }
+
+  &--ghost {
+    background: transparent;
+    color: var(--color-accent);
+
+    &:hover { background: var(--color-accent-soft); }
+  }
+}

@@ -1,0 +1,23 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.featured-projects {
+  padding-block: $space-24;
+  background: var(--bg-soft);
+
+  @include respond(md) { padding-block: $space-16; }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $space-6;
+
+    @include respond(lg) { grid-template-columns: repeat(2, 1fr); }
+    @include respond(sm) { grid-template-columns: 1fr; }
+  }
+
+  &__footer {
+    text-align: center;
+    margin-top: $space-10;
+  }
+}

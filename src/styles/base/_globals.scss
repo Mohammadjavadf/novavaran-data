@@ -1,0 +1,109 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+:root {
+  // Light theme (default)
+  --bg: #{$color-white};
+  --bg-soft: #{$color-gray-50};
+  --surface: #{$color-white};
+  --surface-2: #{$color-gray-50};
+  --border: #{$color-gray-200};
+  --text-primary: #{$color-gray-900};
+  --text-secondary: #{$color-gray-600};
+  --text-muted: #{$color-gray-400};
+  --color-primary: #{$color-primary-800};
+  --color-accent: #{$color-accent-500};
+  --color-accent-soft: #{$color-accent-100};
+  --overlay: rgba(15, 23, 42, 0.5);
+  --header-bg: rgba(255, 255, 255, 0.85);
+}
+
+[data-theme='dark'] {
+  --bg: #0b1220;
+  --bg-soft: #0f1a2c;
+  --surface: #151f2e;
+  --surface-2: #1a2638;
+  --border: #263349;
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --color-primary: #{$color-accent-400};
+  --color-accent: #{$color-accent-400};
+  --color-accent-soft: rgba(43, 163, 132, 0.15);
+  --overlay: rgba(0, 0, 0, 0.7);
+  --header-bg: rgba(11, 18, 32, 0.85);
+}
+
+body {
+  background: var(--bg);
+  color: var(--text-primary);
+  transition: background $transition-base, color $transition-base;
+}
+
+
+.section {
+  padding-block: $space-24;
+
+  @include respond(md) { padding-block: $space-16; }
+}
+// ===== Accessibility & Performance =====
+.main {
+  min-height: calc(100vh - 72px);
+}
+
+img, picture, video {
+  content-visibility: auto;
+}
+
+// Reduced motion support
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+// Better focus visible for keyboard users
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+// Print styles
+@media print {
+  .header,
+  .footer,
+  .scroll-to-top {
+    display: none !important;
+  }
+  .main { min-height: auto; }
+  body { background: white; color: black; }
+}
+// ===== Page Loader (Suspense fallback) =====
+.page-loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  width: 100%;
+
+  &__spinner {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 3px solid var(--border);
+    border-top-color: var(--color-accent);
+    animation: page-loader-spin 0.8s linear infinite;
+  }
+}
+
+@keyframes page-loader-spin {
+  to { transform: rotate(360deg); }
+}
+.text-accent { color: var(--color-accent); }
+.text-center { text-align: center; }

@@ -1,0 +1,92 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.testimonials {
+  padding-block: $space-24;
+  background: var(--bg);
+
+  @include respond(md) { padding-block: $space-16; }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $space-6;
+
+    @include respond(lg) { grid-template-columns: 1fr; max-width: 720px; margin-inline: auto; }
+  }
+
+  &__card {
+    padding: $space-8;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: $radius-lg;
+    display: flex;
+    flex-direction: column;
+    gap: $space-4;
+    height: 100%;
+    transition: all $transition-base;
+
+    &:hover {
+      border-color: var(--color-accent);
+      box-shadow: $shadow-md;
+    }
+  }
+
+  &__stars {
+    display: flex;
+    gap: 2px;
+    color: #f5b400;
+  }
+
+  &__quote {
+    font-size: $fs-sm;
+    line-height: 1.9;
+    color: var(--text-secondary);
+    flex: 1;
+    font-style: italic;
+  }
+
+  &__author {
+    display: flex;
+    align-items: center;
+    gap: $space-3;
+    padding-top: $space-4;
+    border-top: 1px solid var(--border);
+  }
+
+  &__avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--color-accent-soft);
+  }
+.safe-image-fallback.testimonials__avatar {
+  min-height: 48px;
+  height: 48px;
+  width: 48px;
+  border-radius: 50%;
+  border-style: solid;
+
+  &__inner {
+    padding: 0;
+    font-size: $fs-md;
+    font-weight: 700;
+    color: var(--color-accent);
+
+    svg { display: none; }
+  }
+}
+  &__info {
+    strong {
+      display: block;
+      font-size: $fs-sm;
+      color: var(--text-primary);
+      margin-bottom: 2px;
+    }
+    span {
+      font-size: $fs-xs;
+      color: var(--text-muted);
+    }
+  }
+}
