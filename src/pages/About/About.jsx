@@ -1,24 +1,33 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { CheckCircle2 } from 'lucide-react';
 import Container from '../../components/common/Container/Container';
 import SectionTitle from '../../components/common/SectionTitle/SectionTitle';
+import SafeImage from '../../components/common/SafeImage/SafeImage';
 import CTA from '../../components/sections/CTA/CTA';
 import { timeline, values } from '../../data/about';
-import { staggerContainer, staggerItem, fadeUp, viewportOnce, slideIn } from '../../utils/animations';
-import SafeImage from '../../components/common/SafeImage/SafeImage';
+import {
+  staggerContainer, staggerItem, fadeUp, viewportOnce, slideIn,
+} from '../../utils/animations';
 
 export default function About() {
+  const { t } = useTranslation();
+
+  const highlights = [
+    t('aboutPage.highlights.h1'),
+    t('aboutPage.highlights.h2'),
+    t('aboutPage.highlights.h3'),
+    t('aboutPage.highlights.h4'),
+  ];
+
   return (
     <>
       <section className="page-hero">
         <Container>
           <motion.div variants={fadeUp} initial="hidden" animate="visible">
-            <span className="page-hero__eyebrow">درباره ما</span>
-            <h1 className="page-hero__title">ما به قدرت فناوری برای تغییر باور داریم</h1>
-            <p className="page-hero__desc">
-              نوآوران داده از سال ۱۳۹۸ با هدف ساخت نرم‌افزارهای باکیفیت و راهکارهای داده‌محور
-              شروع به کار کرد و امروز به یکی از معتبرترین شرکت‌های فناوری ایران تبدیل شده است.
-            </p>
+            <span className="page-hero__eyebrow">{t('aboutPage.eyebrow')}</span>
+            <h1 className="page-hero__title">{t('aboutPage.title')}</h1>
+            <p className="page-hero__desc">{t('aboutPage.desc')}</p>
           </motion.div>
         </Container>
       </section>
@@ -33,21 +42,14 @@ export default function About() {
               whileInView="visible"
               viewport={viewportOnce}
             >
-              <h2>داستان ما از یک ایده ساده شروع شد</h2>
-              <p>
-                در سال ۱۳۹۸، سه مهندس نرم‌افزار با یک باور مشترک گرد هم آمدند:
-                فناوری باید در خدمت کسب‌وکار باشد، نه برعکس. از همان روز اول،
-                تمرکز ما بر حل مسائل واقعی مشتریان با راهکارهای ساده، مقیاس‌پذیر و امن بود.
-              </p>
-              <p>
-                امروز با تیمی از متخصصان حوزه‌های نرم‌افزار، داده، امنیت و زیرساخت،
-                به بیش از ۴۵ شرکت در صنایع مختلف خدمت می‌دهیم.
-              </p>
+              <h2>{t('aboutPage.storyTitle')}</h2>
+              <p>{t('aboutPage.storyP1')}</p>
+              <p>{t('aboutPage.storyP2')}</p>
               <div className="about-intro__highlights">
-                {['تیم متخصص و با تجربه', 'روش‌های Agile و شفاف', 'پشتیبانی بلندمدت', 'تعهد به کیفیت و امنیت'].map((t) => (
-                  <div key={t} className="about-intro__highlight">
+                {highlights.map((h) => (
+                  <div key={h} className="about-intro__highlight">
                     <CheckCircle2 size={18} />
-                    <span>{t}</span>
+                    <span>{h}</span>
                   </div>
                 ))}
               </div>
@@ -60,11 +62,11 @@ export default function About() {
               whileInView="visible"
               viewport={viewportOnce}
             >
-<SafeImage
-  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80"
-  alt="تیم نوآوران داده"
-  fallbackText="تیم نوآوران داده"
-/>
+              <SafeImage
+                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80"
+                alt={t('aboutPage.eyebrow')}
+                fallbackText={t('aboutPage.eyebrow')}
+              />
             </motion.div>
           </div>
         </Container>
@@ -73,15 +75,14 @@ export default function About() {
       <section className="timeline">
         <Container>
           <SectionTitle
-            eyebrow="مسیر ما"
-            title="نقاط عطف مسیر نوآوران داده"
-            description="از یک ایده تا تبدیل شدن به شریک فناوری ده‌ها شرکت."
+            eyebrow={t('aboutPage.timelineEyebrow')}
+            title={t('aboutPage.timelineTitle')}
+            description={t('aboutPage.timelineDesc')}
           />
-
           <div className="timeline__list">
             {timeline.map((item, i) => (
               <motion.div
-                key={item.year}
+                key={item.id}
                 className="timeline__item"
                 variants={fadeUp}
                 initial="hidden"
@@ -89,9 +90,9 @@ export default function About() {
                 viewport={viewportOnce}
                 transition={{ delay: i * 0.06 }}
               >
-                <span className="timeline__year">{item.year}</span>
-                <h3 className="timeline__title">{item.title}</h3>
-                <p className="timeline__desc">{item.desc}</p>
+                <span className="timeline__year">{t(item.yearKey)}</span>
+                <h3 className="timeline__title">{t(item.titleKey)}</h3>
+                <p className="timeline__desc">{t(item.descKey)}</p>
               </motion.div>
             ))}
           </div>
@@ -101,11 +102,10 @@ export default function About() {
       <section className="values">
         <Container>
           <SectionTitle
-            eyebrow="ارزش‌های ما"
-            title="اصولی که به آن‌ها پایبندیم"
-            description="این ارزش‌ها، راهنمای تصمیم‌گیری و رفتار روزانه ما هستند."
+            eyebrow={t('aboutPage.valuesEyebrow')}
+            title={t('aboutPage.valuesTitle')}
+            description={t('aboutPage.valuesDesc')}
           />
-
           <motion.div
             className="values__grid"
             variants={staggerContainer}
@@ -116,10 +116,10 @@ export default function About() {
             {values.map((v) => {
               const Icon = v.icon;
               return (
-                <motion.div key={v.title} className="values__card" variants={staggerItem}>
+                <motion.div key={v.id} className="values__card" variants={staggerItem}>
                   <div className="values__icon"><Icon size={24} /></div>
-                  <h3 className="values__title">{v.title}</h3>
-                  <p className="values__desc">{v.desc}</p>
+                  <h3 className="values__title">{t(v.titleKey)}</h3>
+                  <p className="values__desc">{t(v.descKey)}</p>
                 </motion.div>
               );
             })}

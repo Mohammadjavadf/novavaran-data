@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { ArrowLeft } from 'lucide-react';
 import Container from '../../common/Container/Container';
 import SectionTitle from '../../common/SectionTitle/SectionTitle';
@@ -8,13 +9,15 @@ import { services } from '../../../data/services';
 import { staggerContainer, staggerItem } from '../../../utils/animations';
 
 export default function ServicesPreview() {
+  const { t } = useTranslation();
+
   return (
     <section className="services-preview">
       <Container>
         <SectionTitle
-          eyebrow="خدمات ما"
-          title="راهکارهای فناوری برای رشد شما"
-          description="از طراحی تا استقرار، تمام نیازهای فناوری کسب‌وکار شما را پوشش می‌دهیم."
+          eyebrow={t('services.title')}
+          title={t('services.subtitle')}
+          description={t('services.desc')}
         />
 
         <motion.div
@@ -32,10 +35,10 @@ export default function ServicesPreview() {
                   <div className="services-preview__icon">
                     <Icon size={24} />
                   </div>
-                  <h3 className="services-preview__title">{s.title}</h3>
-                  <p className="services-preview__desc">{s.short}</p>
+                  <h3 className="services-preview__title">{t(s.titleKey)}</h3>
+                  <p className="services-preview__desc">{t(s.shortKey)}</p>
                   <span className="services-preview__link">
-                    بیشتر بدانید <ArrowLeft size={16} />
+                    {t('services.learnMore')} <ArrowLeft size={16} />
                   </span>
                 </Link>
               </motion.div>
@@ -45,7 +48,7 @@ export default function ServicesPreview() {
 
         <div className="services-preview__footer">
           <Button to="/services" variant="outline" size="md">
-            مشاهده همه خدمات
+            {t('services.viewAll')}
           </Button>
         </div>
       </Container>

@@ -1,19 +1,21 @@
 import { useMemo, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import Container from '../../components/common/Container/Container';
 import Card from '../../components/common/Card/Card';
 import CTA from '../../components/sections/CTA/CTA';
-import { blogPosts, blogCategories } from '../../data/blog';
+import { blogPosts, blogCategoryKeys } from '../../data/blog';
 import { fadeUp, staggerContainer, staggerItem } from '../../utils/animations';
 
-const ALL = 'همه';
+const ALL_KEY = 'blogCategories.all';
 
 export default function Blog() {
-  const [active, setActive] = useState(ALL);
+  const { t } = useTranslation();
+  const [activeKey, setActiveKey] = useState(ALL_KEY);
 
   const filtered = useMemo(
-    () => (active === ALL ? blogPosts : blogPosts.filter((p) => p.category === active)),
-    [active]
+    () => (activeKey === ALL_KEY ? blogPosts : blogPosts.filter((p) => p.categoryKey === activeKey)),
+    [activeKey]
   );
 
   return (
@@ -21,11 +23,9 @@ export default function Blog() {
       <section className="page-hero">
         <Container>
           <motion.div variants={fadeUp} initial="hidden" animate="visible">
-            <span className="page-hero__eyebrow">بلاگ</span>
-            <h1 className="page-hero__title">مقالات فناوری از تیم نوآوران داده</h1>
-            <p className="page-hero__desc">
-              تجربه‌ها، بینش‌ها و دانش فنی تیم ما در قالب مقالات کاربردی.
-            </p>
+            <span className="page-hero__eyebrow">{t('blogPage.eyebrow')}</span>
+            <h1 className="page-hero__title">{t('blogPage.title')}</h1>
+            <p className="page-hero__desc">{t('blogPage.desc')}</p>
           </motion.div>
         </Container>
       </section>
@@ -33,23 +33,23 @@ export default function Blog() {
       <section className="blog-page">
         <Container>
           <div className="blog-page__filters" role="tablist">
-            {blogCategories.map((cat) => (
+            {blogCategoryKeys.map((key) => (
               <button
-                key={cat}
+                key={key}
                 type="button"
                 role="tab"
-                aria-selected={active === cat}
-                className={`blog-page__filter ${active === cat ? 'is-active' : ''}`.trim()}
-                onClick={() => setActive(cat)}
+                aria-selected={activeKey === key}
+                className={`blog-page__filter ${activeKey === key ? 'is-active' : ''}`.trim()}
+                onClick={() => setActiveKey(key)}
               >
-                {cat}
+                {t(key)}
               </button>
             ))}
           </div>
 
           <AnimatePresence mode="wait">
             <motion.div
-              key={active}
+              key={activeKey}
               className="blog-page__grid"
               variants={staggerContainer}
               initial="hidden"
@@ -60,16 +60,16 @@ export default function Blog() {
                 <motion.div key={p.slug} variants={staggerItem}>
                   <Card
                     image={p.image}
-                    badge={p.category}
-                    title={p.title}
-                    description={p.excerpt}
+                    badge={t(p.categoryKey)}
+                    title={t(p.titleKey)}
+                    description={t(p.excerptKey)}
                     meta={
                       <>
-                        <span>{p.author}</span>
+                        <span>{t(p.authorKey)}</span>
                         <span>·</span>
-                        <span>{p.date}</span>
+                        <span>{t(p.dateKey)}</span>
                         <span>·</span>
-                        <span>{p.readTime}</span>
+                        <span>{t(p.readTimeKey)}</span>
                       </>
                     }
                     to={`/blog/${p.slug}`}
@@ -81,8 +81,8 @@ export default function Blog() {
 
           {filtered.length === 0 && (
             <div className="blog-page__empty">
-              <h3>مقاله‌ای در این دسته نیست</h3>
-              <p>دسته دیگری را انتخاب کنید.</p>
+              <h3>{t('blogPage.empty')}</h3>
+              <p>{t('blogPage.emptyDesc')}</p>
             </div>
           )}
         </Container>

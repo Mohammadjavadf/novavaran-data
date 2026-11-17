@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { ArrowLeft } from 'lucide-react';
 import Container from '../../components/common/Container/Container';
 import CTA from '../../components/sections/CTA/CTA';
@@ -7,16 +8,16 @@ import { services } from '../../data/services';
 import { fadeUp, staggerContainer, staggerItem } from '../../utils/animations';
 
 export default function Services() {
+  const { t } = useTranslation();
+
   return (
     <>
       <section className="page-hero">
         <Container>
           <motion.div variants={fadeUp} initial="hidden" animate="visible">
-            <span className="page-hero__eyebrow">خدمات ما</span>
-            <h1 className="page-hero__title">راهکارهای کامل فناوری برای کسب‌وکار شما</h1>
-            <p className="page-hero__desc">
-              از ایده تا استقرار و پشتیبانی؛ همه نیازهای فناوری شما را پوشش می‌دهیم.
-            </p>
+            <span className="page-hero__eyebrow">{t('servicesPage.eyebrow')}</span>
+            <h1 className="page-hero__title">{t('servicesPage.title')}</h1>
+            <p className="page-hero__desc">{t('servicesPage.desc')}</p>
           </motion.div>
         </Container>
       </section>
@@ -33,16 +34,24 @@ export default function Services() {
             {services.map((s) => {
               const Icon = s.icon;
               return (
-                <motion.article key={s.slug} className="services-page__card" variants={staggerItem}>
-                  <div className="services-page__icon"><Icon size={26} /></div>
+                <motion.article
+                  key={s.slug}
+                  className="services-page__card"
+                  variants={staggerItem}
+                >
+                  <div className="services-page__icon">
+                    <Icon size={26} />
+                  </div>
                   <div className="services-page__body">
-                    <h2 className="services-page__title">{s.title}</h2>
-                    <p className="services-page__desc">{s.description}</p>
+                    <h2 className="services-page__title">{t(s.titleKey)}</h2>
+                    <p className="services-page__desc">{t(s.descKey)}</p>
                     <div className="services-page__features">
-                      {s.features.map((f) => <span key={f}>{f}</span>)}
+                      {s.featuresKeys.map((key) => (
+                        <span key={key}>{t(key)}</span>
+                      ))}
                     </div>
                     <Link to={`/services/${s.slug}`} className="services-page__link">
-                      جزئیات کامل <ArrowLeft size={16} />
+                      {t('servicesPage.details')} <ArrowLeft size={16} />
                     </Link>
                   </div>
                 </motion.article>

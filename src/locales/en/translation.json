@@ -1,0 +1,546 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "services": "Services",
+    "projects": "Projects",
+    "team": "Team",
+    "blog": "Blog",
+    "contact": "Contact",
+    "startProject": "Start a Project"
+  },
+  "megaMenu": {
+    "title": "Our Services",
+    "desc": "IT solutions for your business growth",
+    "allServices": "All Services"
+  },
+  "mobileMenu": {
+    "title": "Menu",
+    "openSub": "Open submenu",
+    "closeSub": "Close submenu",
+    "freeConsult": "Free Consultation",
+    "viewProjects": "View Projects"
+  },
+  "hero": {
+    "badge": "Technology partner to 45+ companies",
+    "title": "Data-driven <1>solutions</1> for your business growth",
+    "desc": "At NovaVaran Data, we combine technical expertise with deep business understanding to build software that truly works.",
+    "startBtn": "Start a Project",
+    "viewProjectsBtn": "View Projects",
+    "statProjects": "Successful Projects",
+    "statSatisfaction": "Client Satisfaction",
+    "statExperience": "Years of Experience",
+    "miniStatProjectsValue": "80+",
+    "miniStatSatisfactionValue": "98%",
+    "miniStatExperienceValue": "6",
+    "monthlyRevenue": "Monthly Revenue",
+    "annualGrowth": "Annual Growth",
+    "monthlyRevenueValue": "$2.4M",
+    "annualGrowthValue": "+32%",
+    "floatQuality": "Guaranteed Quality",
+    "floatGrowth": "32% Growth"
+  },
+  "trustBar": {
+    "label": "Trusted by leading teams in Iran"
+  },
+  "stats": {
+    "projects": "Successful Projects",
+    "clients": "Active Clients",
+    "experts": "Team Experts",
+    "satisfaction": "Client Satisfaction",
+    "projectsValue": "80+",
+    "clientsValue": "45+",
+    "expertsValue": "12",
+    "satisfactionValue": "98%"
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Technology solutions for your growth",
+    "desc": "From design to deployment, we cover all your business technology needs.",
+    "learnMore": "Learn More",
+    "viewAll": "View All Services",
+    "software": "Software Development",
+    "cloud": "Cloud Computing",
+    "security": "Information Security",
+    "data": "Data Analytics"
+  },
+  "servicesPage": {
+    "eyebrow": "Our Services",
+    "title": "Complete technology solutions for your business",
+    "desc": "From idea to deployment and support; we cover all your technology needs.",
+    "details": "View Details"
+  },
+  "serviceDetail": {
+    "notFound": "Service not found",
+    "notFoundDesc": "The service you were looking for was not found.",
+    "backToServices": "Back to Services",
+    "intro": "Service Overview",
+    "introExtra": "Our expert team at NovaVaran Data, with years of experience across various industries, is ready to provide customized solutions tailored to your needs. From consultation and requirements analysis to deployment and support, we will be with you every step of the way.",
+    "features": "Key Features",
+    "whyUs": "Why NovaVaran Data?",
+    "whyUsDesc": "We are not just a service provider; we are your technology partner. With a consultative approach, we first deeply understand your needs and then propose a cost-effective, scalable, and secure solution.",
+    "otherServices": "Other Services",
+    "freeConsult": "Free Consultation",
+    "freeConsultDesc": "Talk to us about your project.",
+    "contactUs": "Contact Us"
+  },
+  "serviceItems": {
+    "software": {
+      "title": "Software Development",
+      "short": "Custom web and mobile applications with scalable architecture and clean code.",
+      "desc": "Our team uses the latest technologies to build software that grows with your business.",
+      "features": {
+        "f1": "React & Next.js",
+        "f2": "Node.js & Python",
+        "f3": "Microservices Architecture",
+        "f4": "Automated Testing"
+      }
+    },
+    "cloud": {
+      "title": "Cloud Computing",
+      "short": "Scalable, secure, and cost-effective cloud infrastructure for your business.",
+      "desc": "From design to implementation and management of cloud infrastructure, we are with you.",
+      "features": {
+        "f1": "AWS & Azure",
+        "f2": "Kubernetes",
+        "f3": "CI/CD",
+        "f4": "24/7 Monitoring"
+      }
+    },
+    "security": {
+      "title": "Information Security",
+      "short": "Protecting data and infrastructure with world-class standards.",
+      "desc": "We consider security from day one of design, not as an afterthought.",
+      "features": {
+        "f1": "Penetration Testing",
+        "f2": "Data Encryption",
+        "f3": "Identity Management",
+        "f4": "Incident Response"
+      }
+    },
+    "data": {
+      "title": "Data Analytics",
+      "short": "Turning raw data into valuable and actionable insights.",
+      "desc": "Interactive dashboards and predictive models make your decision-making smarter.",
+      "features": {
+        "f1": "BI Dashboards",
+        "f2": "Machine Learning",
+        "f3": "ETL Pipeline",
+        "f4": "Smart Reports"
+      }
+    },
+    "mobile": {
+      "title": "Mobile Applications",
+      "short": "iOS and Android app design and development with exceptional UX.",
+      "desc": "From idea to app store release, we are with you.",
+      "features": {
+        "f1": "React Native",
+        "f2": "Flutter",
+        "f3": "Professional UI/UX",
+        "f4": "App Store Release"
+      }
+    },
+    "devops": {
+      "title": "Infrastructure & DevOps",
+      "short": "Automated deployment, continuous monitoring, and system stability.",
+      "desc": "We embed DevOps culture in your team to increase release speed.",
+      "features": {
+        "f1": "Docker",
+        "f2": "Terraform",
+        "f3": "GitOps",
+        "f4": "SRE"
+      }
+    }
+  },
+  "featuredProjects": {
+    "eyebrow": "Projects",
+    "title": "Projects we are proud of",
+    "desc": "A look at some of the projects we have completed with various teams.",
+    "viewAll": "View All Projects"
+  },
+  "testimonials": {
+    "eyebrow": "Testimonials",
+    "title": "What our clients say",
+    "desc": "Client satisfaction is our greatest asset."
+  },
+  "cta": {
+    "title": "Ready to start your next project with us?",
+    "desc": "Book a free consultation and let's discuss your technical challenges and solutions.",
+    "consultBtn": "Book Free Consultation",
+    "callBtn": "Direct Call"
+  },
+  "footer": {
+    "tagline": "NovaVaran Data; your technology partner for building scalable, secure, and data-driven digital solutions.",
+    "contactTitle": "Contact",
+    "address": "Tehran, Valiasr St., No. 1204",
+    "newsletterTitle": "Tech Newsletter",
+    "newsletterDesc": "Get the most important tech news and articles monthly.",
+    "emailPlaceholder": "Your Email",
+    "subscribe": "Subscribe",
+    "companyName": "NovaVaran Data",
+    "rights": "All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Use",
+    "techArticles": "Technical Articles",
+    "faq": "FAQ",
+    "cols": {
+      "company": "Company",
+      "services": "Services",
+      "resources": "Resources"
+    }
+  },
+  "projectItems": {
+    "fintech": {
+      "category": "Web Application",
+      "title": "Smart Fintech Dashboard",
+      "desc": "Financial management platform with a real-time analytics dashboard and smart reports."
+    },
+    "health": {
+      "category": "Mobile",
+      "title": "Digital Health App",
+      "desc": "Health monitoring app connected to wearable devices."
+    },
+    "ecommerce": {
+      "category": "Web Application",
+      "title": "B2B E-commerce Platform",
+      "desc": "Wholesale platform with inventory management and secure payment."
+    },
+    "logistics": {
+      "category": "Enterprise Software",
+      "title": "Logistics Management System",
+      "desc": "Real-time shipment tracking with a comprehensive admin dashboard."
+    },
+    "ai": {
+      "category": "Artificial Intelligence",
+      "title": "Smart Support Chatbot",
+      "desc": "Virtual assistant with Persian natural language processing."
+    },
+    "banking": {
+      "category": "Security",
+      "title": "Banking Authentication System",
+      "desc": "Multi-factor authentication infrastructure for a major bank."
+    }
+  },
+  "testimonialItems": {
+    "sara": {
+      "name": "Sara Mohammadi",
+      "role": "CEO, Aria Fintech",
+      "quote": "NovaVaran Data team turned our idea into a market-ready product in less than 4 months. Their code quality and commitment were exceptional."
+    },
+    "reza": {
+      "name": "Reza Karimi",
+      "role": "CTO, Bazaar Online Store",
+      "quote": "After migrating to the new infrastructure, the site speed tripled and server costs dropped by 40%."
+    },
+    "mina": {
+      "name": "Mina Ahmadi",
+      "role": "Product Manager, Salamatyar",
+      "quote": "Working with the NovaVaran Data team was truly professional. From design to delivery, everything was precise and transparent."
+    }
+  },
+  "common": {
+    "readMore": "Read More",
+    "loading": "Loading..."
+  },
+  "aboutPage": {
+    "eyebrow": "About Us",
+    "title": "We believe in the power of technology to make change",
+    "desc": "NovaVaran Data started in 2019 with the goal of building high-quality software and data-driven solutions, and today has become one of the most trusted technology companies in Iran.",
+    "storyTitle": "Our story began with a simple idea",
+    "storyP1": "In 2019, three software engineers came together with a shared belief: technology should serve the business, not the other way around. From day one, our focus has been on solving real customer problems with simple, scalable, and secure solutions.",
+    "storyP2": "Today, with a team of experts in software, data, security, and infrastructure, we serve more than 45 companies across various industries.",
+    "highlights": {
+      "h1": "Expert and experienced team",
+      "h2": "Agile and transparent methods",
+      "h3": "Long-term support",
+      "h4": "Commitment to quality and security"
+    },
+    "timelineEyebrow": "Our Journey",
+    "timelineTitle": "Milestones in NovaVaran Data's path",
+    "timelineDesc": "From an idea to becoming the technology partner of dozens of companies.",
+    "valuesEyebrow": "Our Values",
+    "valuesTitle": "The principles we adhere to",
+    "valuesDesc": "These values guide our decisions and daily behavior.",
+    "timelineItems": {
+      "t1": {
+        "year": "2019",
+        "title": "The beginning",
+        "desc": "We started with a 3-person team focused on web development."
+      },
+      "t2": {
+        "year": "2020",
+        "title": "First enterprise project",
+        "desc": "We signed our first contract with a major fintech company."
+      },
+      "t3": {
+        "year": "2021",
+        "title": "Team growth",
+        "desc": "The team grew to 8 people and we opened a new office."
+      },
+      "t4": {
+        "year": "2022",
+        "title": "Entering the data field",
+        "desc": "The data analytics and AI unit was launched."
+      },
+      "t5": {
+        "year": "2023",
+        "title": "Cloud services expansion",
+        "desc": "We became an official partner of major cloud providers."
+      },
+      "t6": {
+        "year": "2024",
+        "title": "45+ active clients",
+        "desc": "We became one of the most trusted technology companies in Iran."
+      }
+    },
+    "valueItems": {
+      "v1": {
+        "title": "Focus on results",
+        "desc": "Our success depends on the success of your project. We stay with you until results are achieved."
+      },
+      "v2": {
+        "title": "Commitment and honesty",
+        "desc": "Transparency in communication and contracts is the foundation of long-term trust with clients."
+      },
+      "v3": {
+        "title": "Continuous innovation",
+        "desc": "We always look for better and newer solutions, not just repeating the past."
+      },
+      "v4": {
+        "title": "Security and quality",
+        "desc": "Code quality and data security are non-negotiable."
+      },
+      "v5": {
+        "title": "Team-centric",
+        "desc": "We believe in the growth and learning of our team members; because a strong team builds strong products."
+      },
+      "v6": {
+        "title": "Speed and agility",
+        "desc": "With Agile methods, we get feedback quickly and correct our path."
+      }
+    }
+  },
+  "projectsPage": {
+    "eyebrow": "Projects",
+    "title": "Projects we are proud of",
+    "desc": "Every project is a success story. Take a look at some of our work.",
+    "filterAll": "All",
+    "countPrefix": "projects in category",
+    "empty": "No projects in this category",
+    "emptyDesc": "Please choose another category."
+  },
+  "teamPage": {
+    "eyebrow": "Our Team",
+    "title": "The people behind NovaVaran Data",
+    "desc": "A team of passionate experts building high-quality technology products together."
+  },
+  "teamItems": {
+    "ali": {
+      "name": "Ali Rezaei",
+      "role": "Founder & CEO",
+      "bio": "More than 10 years of experience leading technical teams and building software products."
+    },
+    "maryam": {
+      "name": "Maryam Hosseini",
+      "role": "CTO",
+      "bio": "Expert in software architecture and scalability of distributed systems."
+    },
+    "saeed": {
+      "name": "Saeed Karimi",
+      "role": "Frontend Team Lead",
+      "bio": "Passionate about user experience and designing modern interfaces with React and TypeScript."
+    },
+    "zahra": {
+      "name": "Zahra Nouri",
+      "role": "Backend Team Lead",
+      "bio": "Node.js and database expert, focusing on security and performance."
+    },
+    "mohammad": {
+      "name": "Mohammad Sadeghi",
+      "role": "DevOps Engineer",
+      "bio": "Responsible for cloud infrastructure, CI/CD, and system stability."
+    },
+    "negar": {
+      "name": "Negar Ahmadi",
+      "role": "Product Designer",
+      "bio": "Designing user experiences and beautiful interfaces with a focus on accessibility."
+    },
+    "amir": {
+      "name": "Amir Tehrani",
+      "role": "Data Engineer",
+      "bio": "Building data pipelines and machine learning models."
+    },
+    "leila": {
+      "name": "Leila Mousavi",
+      "role": "Project Manager",
+      "bio": "Coordinating teams and transparent communication with clients using Agile methodology."
+    }
+  },
+  "blogPage": {
+    "eyebrow": "Blog",
+    "title": "Technology articles from the NovaVaran Data team",
+    "desc": "Experiences, insights, and technical knowledge from our team in practical articles.",
+    "filterAll": "All",
+    "empty": "No articles in this category",
+    "emptyDesc": "Please choose another category."
+  },
+  "blogCategories": {
+    "all": "All",
+    "architecture": "Software Architecture",
+    "frontend": "Frontend",
+    "devops": "DevOps",
+    "data": "Data Analytics",
+    "security": "Security",
+    "design": "Design"
+  },
+  "blogPost": {
+    "back": "Back to Blog",
+    "authorRole": "Writer at NovaVaran Data",
+    "related": "Related Articles",
+    "notFound": "Article not found",
+    "notFoundDesc": "The article you were looking for is not available.",
+    "backToBlog": "Back to Blog"
+  },
+  "blogItems": {
+    "scalable": {
+      "title": "Scalable Architecture: Where to Start?",
+      "excerpt": "Principles for designing systems that grow with your business.",
+      "author": "Maryam Hosseini",
+      "date": "2024/11/05",
+      "readTime": "8 min read",
+      "content": {
+        "p1": "Scalability is one of the most important concerns of any technical team. In this article, we cover the fundamental principles of designing scalable systems.",
+        "h1": "1. Separation of Concerns",
+        "p2": "Each part of the system should have a clear responsibility. This principle is the foundation of microservices architecture and helps horizontal scalability.",
+        "h2": "2. Smart Caching",
+        "p3": "Using Redis or CDN can significantly reduce the load on the database. But do not forget the cache invalidation strategy.",
+        "h3": "3. Monitoring",
+        "p4": "Without monitoring, you cannot tell where the bottleneck is. Take tools like Prometheus and Grafana seriously from day one.",
+        "quote": "Scalability is not a feature; it is a mindset."
+      }
+    },
+    "react": {
+      "title": "10 Professional React Tips You Should Know",
+      "excerpt": "From memoization to folder structure, tips that make your code cleaner.",
+      "author": "Saeed Karimi",
+      "date": "2024/10/23",
+      "readTime": "6 min read",
+      "content": {
+        "p1": "React is a powerful tool, but using it correctly requires following patterns. In this article, we review 10 key tips.",
+        "h1": "1. Use React.memo Wisely",
+        "p2": "Not all components need memo. Only where frequent re-rendering is problematic.",
+        "h2": "2. Take useEffect Seriously",
+        "p3": "Many React bugs come from wrong dependency arrays. Use the ESLint plugin.",
+        "h3": "3. Keep State as Low as Possible",
+        "p4": "Keep state in the closest component that needs it, not at the highest level."
+      }
+    },
+    "devops": {
+      "title": "DevOps Culture: Beyond Tools",
+      "excerpt": "Why is DevOps a culture, not just a set of tools?",
+      "author": "Mohammad Sadeghi",
+      "date": "2024/10/11",
+      "readTime": "7 min read",
+      "content": {
+        "p1": "DevOps is first and foremost an organizational culture. Tools are just enablers.",
+        "h1": "Collaboration Between Dev and Ops Teams",
+        "p2": "Breaking down the wall between developers and the operations team is the first step.",
+        "h2": "Automate Everything",
+        "p3": "From testing to deployment, whatever can be automated should be."
+      }
+    },
+    "data": {
+      "title": "Data-Driven Decision Making in Organizations",
+      "excerpt": "How to turn data into actionable insights?",
+      "author": "Amir Tehrani",
+      "date": "2024/09/26",
+      "readTime": "9 min read",
+      "content": {
+        "p1": "Data without analysis is just numbers. Data-driven decision making requires process and culture.",
+        "h1": "Ask the Right Question",
+        "p2": "Before any analysis, determine what question you want to answer.",
+        "h2": "Operational Dashboards",
+        "p3": "A dashboard should enable the decision-maker to act, not just display numbers."
+      }
+    },
+    "security": {
+      "title": "Security from Day One: Why After Release is Too Late",
+      "excerpt": "Secure design principles that must be followed from the start.",
+      "author": "Zahra Nouri",
+      "date": "2024/09/12",
+      "readTime": "5 min read",
+      "content": {
+        "p1": "Adding security after release is like locking a door in a wall that doesn't exist.",
+        "h1": "Principle of Least Privilege",
+        "p2": "Each user and service should only have access to what it needs.",
+        "h2": "Data Encryption",
+        "p3": "Sensitive data must be encrypted both in transit and at rest."
+      }
+    },
+    "ux": {
+      "title": "UX Principles Every Developer Should Know",
+      "excerpt": "Good design is the result of collaboration between designer and developer.",
+      "author": "Negar Ahmadi",
+      "date": "2024/08/31",
+      "readTime": "6 min read",
+      "content": {
+        "p1": "A developer who knows UX principles builds better products.",
+        "h1": "Immediate Feedback",
+        "p2": "Every user action should have immediate feedback to preserve the sense of control.",
+        "h2": "Simplicity",
+        "p3": "Every extra element is a cognitive load. Simpler is better."
+      }
+    }
+  },
+  "contactPage": {
+    "eyebrow": "Contact Us",
+    "title": "Let's talk about your project",
+    "desc": "Fill out the form below or reach out to us directly through our contact channels.",
+    "formTitle": "Send a Message",
+    "formDesc": "We usually respond within 24 hours.",
+    "success": "Your message was sent successfully. We will contact you soon.",
+    "name": "Full Name",
+    "namePh": "e.g. John Doe",
+    "email": "Email",
+    "emailPh": "you@example.com",
+    "phone": "Phone",
+    "phonePh": "+98 912 345 6789",
+    "subject": "Subject",
+    "subjectPh": "Select...",
+    "subjectSoftware": "Software Development",
+    "subjectCloud": "Cloud Computing",
+    "subjectData": "Data Analytics",
+    "subjectSecurity": "Security",
+    "subjectOther": "Other",
+    "message": "Message",
+    "messagePh": "Write about your project or needs...",
+    "submit": "Send Message",
+    "submitting": "Sending...",
+    "errors": {
+      "nameReq": "Name is required",
+      "nameMin": "At least 3 characters",
+      "emailReq": "Email is required",
+      "emailInvalid": "Invalid email",
+      "subjectReq": "Please select a subject",
+      "msgReq": "Message is required",
+      "msgMin": "At least 10 characters"
+    },
+    "info": {
+      "addressTitle": "Address",
+      "addressBody": "Tehran, Valiasr St., No. 1204, Floor 5",
+      "phoneTitle": "Phone",
+      "phoneBody": "+98 21 1234 5678",
+      "emailTitle": "Email",
+      "emailBody": "hello@novavarandata.ir",
+      "hoursTitle": "Working Hours",
+      "hoursBody": "Sat–Wed, 9:00–18:00"
+    }
+  },
+  "notFound": {
+    "code": "404",
+    "title": "The page you were looking for was not found",
+    "desc": "The address may be wrong or the page may have been removed. You can go back to the home page or continue from the menu.",
+    "homeBtn": "Back to Home",
+    "contactBtn": "Contact Us"
+  }
+}

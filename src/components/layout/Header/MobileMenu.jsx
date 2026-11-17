@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { ChevronDown, ArrowLeft, Phone } from 'lucide-react';
 import { mainNav } from './headerData';
 import Button from '../../common/Button/Button';
 
 export default function MobileMenu({ isOpen, onClose }) {
+  const { t } = useTranslation();
   const [expanded, setExpanded] = useState(null);
 
   const toggle = (key) => {
@@ -15,7 +17,7 @@ export default function MobileMenu({ isOpen, onClose }) {
     <div className={`mobile ${isOpen ? 'is-open' : ''}`.trim()} aria-hidden={!isOpen}>
       <div className="mobile__inner">
         <nav className="mobile__group">
-          <span className="mobile__title">منو</span>
+          <span className="mobile__title">{t('mobileMenu.title')}</span>
           {mainNav.map((item) => {
             const hasSub = Boolean(item.megaMenu);
             const isExpanded = expanded === item.to;
@@ -31,7 +33,7 @@ export default function MobileMenu({ isOpen, onClose }) {
                       `mobile__link ${isActive ? 'is-active' : ''}`.trim()
                     }
                   >
-                    {item.label}
+                    {t(item.labelKey)}
                   </NavLink>
 
                   {hasSub && (
@@ -39,7 +41,7 @@ export default function MobileMenu({ isOpen, onClose }) {
                       type="button"
                       className={`mobile__toggle ${isExpanded ? 'is-open' : ''}`.trim()}
                       onClick={() => toggle(item.to)}
-                      aria-label={isExpanded ? 'بستن زیرمنو' : 'باز کردن زیرمنو'}
+                      aria-label={isExpanded ? t('mobileMenu.closeSub') : t('mobileMenu.openSub')}
                       aria-expanded={isExpanded}
                     >
                       <ChevronDown size={18} />
@@ -56,7 +58,7 @@ export default function MobileMenu({ isOpen, onClose }) {
                         onClick={onClose}
                         className="mobile__sub-link"
                       >
-                        {sub.title}
+                        {t(sub.titleKey)}
                       </Link>
                     ))}
                   </div>
@@ -76,7 +78,7 @@ export default function MobileMenu({ isOpen, onClose }) {
             iconPosition="start"
             onClick={onClose}
           >
-            مشاوره رایگان
+            {t('mobileMenu.freeConsult')}
           </Button>
         </div>
 
@@ -87,7 +89,7 @@ export default function MobileMenu({ isOpen, onClose }) {
             className="btn btn--outline btn--md btn--full"
             style={{ gap: 6 }}
           >
-            <span>مشاهده نمونه‌کارها</span>
+            <span>{t('mobileMenu.viewProjects')}</span>
             <ArrowLeft size={16} />
           </Link>
         </div>

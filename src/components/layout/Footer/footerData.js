@@ -1,28 +1,28 @@
 export const footerColumns = [
   {
-    title: 'شرکت',
+    titleKey: 'footer.cols.company',
     links: [
-      { label: 'درباره ما', to: '/about' },
-      { label: 'تیم', to: '/team' },
-      { label: 'نمونه‌کارها', to: '/projects' },
-      { label: 'تماس با ما', to: '/contact' },
+      { labelKey: 'nav.about', to: '/about' },
+      { labelKey: 'nav.team', to: '/team' },
+      { labelKey: 'nav.projects', to: '/projects' },
+      { labelKey: 'nav.contact', to: '/contact' },
     ],
   },
   {
-    title: 'خدمات',
+    titleKey: 'footer.cols.services',
     links: [
-      { label: 'توسعه نرم‌افزار', to: '/services/software-development' },
-      { label: 'رایانش ابری', to: '/services/cloud' },
-      { label: 'امنیت اطلاعات', to: '/services/security' },
-      { label: 'تحلیل داده', to: '/services/data' },
+      { labelKey: 'services.software', to: '/services/software-development' },
+      { labelKey: 'services.cloud', to: '/services/cloud' },
+      { labelKey: 'services.security', to: '/services/security' },
+      { labelKey: 'services.data', to: '/services/data' },
     ],
   },
   {
-    title: 'منابع',
+    titleKey: 'footer.cols.resources',
     links: [
-      { label: 'بلاگ', to: '/blog' },
-      { label: 'مقالات فنی', to: '/blog' },
-      { label: 'سوالات متداول', to: '/contact' },
+      { labelKey: 'nav.blog', to: '/blog' },
+      { labelKey: 'footer.techArticles', to: '/blog' },
+      { labelKey: 'footer.faq', to: '/contact' },
     ],
   },
 ];

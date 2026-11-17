@@ -1,8 +1,11 @@
 import { NavLink, Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { ChevronDown, ArrowLeft } from 'lucide-react';
 import { mainNav } from './headerData';
 
 export default function NavMenu() {
+  const { t } = useTranslation();
+
   return (
     <ul className="nav">
       {mainNav.map((item) => {
@@ -19,7 +22,7 @@ export default function NavMenu() {
                 `nav__link ${isActive ? 'is-active' : ''}`.trim()
               }
             >
-              {item.label}
+              {t(item.labelKey)}
               {hasMega && <ChevronDown size={14} className="nav__chevron" />}
             </NavLink>
 
@@ -32,11 +35,13 @@ export default function NavMenu() {
 }
 
 function MegaMenu({ data }) {
+  const { t } = useTranslation();
+
   return (
     <div className="mega" role="menu">
       <div className="mega__head">
-        <h4>{data.title}</h4>
-        <p>{data.description}</p>
+        <h4>{t(data.titleKey)}</h4>
+        <p>{t(data.descKey)}</p>
       </div>
       <div className="mega__grid">
         {data.items.map((item) => {
@@ -45,8 +50,8 @@ function MegaMenu({ data }) {
             <Link key={item.to} to={item.to} className="mega__item" role="menuitem">
               <span className="mega__icon"><Icon size={18} /></span>
               <span className="mega__text">
-                <strong>{item.title}</strong>
-                <span>{item.desc}</span>
+                <strong>{t(item.titleKey)}</strong>
+                <span>{t(item.descKey)}</span>
               </span>
             </Link>
           );
@@ -54,7 +59,7 @@ function MegaMenu({ data }) {
       </div>
       <div style={{ marginTop: '1.25rem', textAlign: 'left' }}>
         <Link to={data.items[0].to} className="btn btn--ghost btn--sm" style={{ gap: 6 }}>
-          <span>همه خدمات</span>
+          <span>{t('megaMenu.allServices')}</span>
           <ArrowLeft size={14} />
         </Link>
       </div>

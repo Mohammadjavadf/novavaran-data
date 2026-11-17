@@ -1,23 +1,25 @@
 import { useMemo, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import Container from '../../components/common/Container/Container';
 import Card from '../../components/common/Card/Card';
 import CTA from '../../components/sections/CTA/CTA';
 import { projects } from '../../data/projects';
 import { fadeUp, staggerContainer, staggerItem } from '../../utils/animations';
 
-const ALL = 'همه';
+const ALL = 'all';
 
 export default function Projects() {
-  const categories = useMemo(() => {
-    const set = new Set(projects.map((p) => p.category));
-    return [ALL, ...Array.from(set)];
-  }, []);
-
+  const { t } = useTranslation();
   const [active, setActive] = useState(ALL);
 
+  const categories = useMemo(() => {
+    const unique = Array.from(new Set(projects.map((p) => p.categoryKey)));
+    return [{ key: 'all', labelKey: 'projectsPage.filterAll' }, ...unique.map((k) => ({ key: k, labelKey: k }))];
+  }, []);
+
   const filtered = useMemo(
-    () => (active === ALL ? projects : projects.filter((p) => p.category === active)),
+    () => (active === ALL ? projects : projects.filter((p) => p.categoryKey === active)),
     [active]
   );
 
@@ -26,34 +28,32 @@ export default function Projects() {
       <section className="page-hero">
         <Container>
           <motion.div variants={fadeUp} initial="hidden" animate="visible">
-            <span className="page-hero__eyebrow">نمونه‌کارها</span>
-            <h1 className="page-hero__title">پروژه‌هایی که به آن‌ها افتخار می‌کنیم</h1>
-            <p className="page-hero__desc">
-              هر پروژه، یک داستان موفقیت است. نمونه‌ای از کارهای ما را ببینید.
-            </p>
+            <span className="page-hero__eyebrow">{t('projectsPage.eyebrow')}</span>
+            <h1 className="page-hero__title">{t('projectsPage.title')}</h1>
+            <p className="page-hero__desc">{t('projectsPage.desc')}</p>
           </motion.div>
         </Container>
       </section>
 
       <section className="projects-page">
         <Container>
-          <div className="projects-page__filters" role="tablist" aria-label="فیلتر دسته‌بندی">
+          <div className="projects-page__filters" role="tablist">
             {categories.map((cat) => (
               <button
-                key={cat}
+                key={cat.key}
                 type="button"
                 role="tab"
-                aria-selected={active === cat}
-                className={`projects-page__filter ${active === cat ? 'is-active' : ''}`.trim()}
-                onClick={() => setActive(cat)}
+                aria-selected={active === cat.key}
+                className={`projects-page__filter ${active === cat.key ? 'is-active' : ''}`.trim()}
+                onClick={() => setActive(cat.key)}
               >
-                {cat}
+                {t(cat.labelKey)}
               </button>
             ))}
           </div>
 
           <p className="projects-page__count">
-            {filtered.length} پروژه در دسته «{active}»
+            {filtered.length} {t('projectsPage.countPrefix')} «{t(categories.find((c) => c.key === active)?.labelKey || 'projectsPage.filterAll')}»
           </p>
 
           <AnimatePresence mode="wait">
@@ -69,9 +69,9 @@ export default function Projects() {
                 <motion.div key={p.slug} variants={staggerItem}>
                   <Card
                     image={p.image}
-                    badge={p.category}
-                    title={p.title}
-                    description={p.description}
+                    badge={t(p.categoryKey)}
+                    title={t(p.titleKey)}
+                    description={t(p.descKey)}
                     meta={<span>{p.tags.join(' · ')}</span>}
                   />
                 </motion.div>
@@ -81,8 +81,8 @@ export default function Projects() {
 
           {filtered.length === 0 && (
             <div className="projects-page__empty">
-              <h3>پروژه‌ای در این دسته نیست</h3>
-              <p>دسته دیگری را انتخاب کنید.</p>
+              <h3>{t('projectsPage.empty')}</h3>
+              <p>{t('projectsPage.emptyDesc')}</p>
             </div>
           )}
         </Container>

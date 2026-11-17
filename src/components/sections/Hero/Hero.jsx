@@ -1,10 +1,17 @@
 import { motion } from 'framer-motion';
+import { Trans, useTranslation } from 'react-i18next';
 import { ArrowLeft, PlayCircle, Sparkles, TrendingUp } from 'lucide-react';
 import Container from '../../common/Container/Container';
 import Button from '../../common/Button/Button';
-import { slideIn, staggerContainer, staggerItem } from '../../../utils/animations';
+import {
+  slideIn,
+  staggerContainer,
+  staggerItem,
+} from '../../../utils/animations';
 
 export default function Hero() {
+  const { t } = useTranslation();
+
   return (
     <section className="hero">
       <Container>
@@ -16,39 +23,53 @@ export default function Hero() {
           >
             <motion.div className="hero__badge" variants={staggerItem}>
               <span className="hero__badge-dot" />
-              <span>شریک فناوری بیش از ۴۵ شرکت</span>
+              <span>{t('hero.badge')}</span>
             </motion.div>
 
             <motion.h1 className="hero__title" variants={staggerItem}>
-              راهکارهای <span className="highlight">داده‌محور</span> برای رشد کسب‌وکار شما
+              <Trans
+                i18nKey="hero.title"
+                components={{ 1: <span className="highlight" /> }}
+              />
             </motion.h1>
 
             <motion.p className="hero__desc" variants={staggerItem}>
-              در نوآوران داده، با ترکیب تخصص فنی و درک عمیق از کسب‌وکار،
-              نرم‌افزارهایی می‌سازیم که واقعاً کار می‌کنند.
+              {t('hero.desc')}
             </motion.p>
 
             <motion.div className="hero__actions" variants={staggerItem}>
-              <Button to="/contact" variant="primary" size="lg" icon={ArrowLeft} iconPosition="end">
-                شروع پروژه
+              <Button
+                to="/contact"
+                variant="primary"
+                size="lg"
+                icon={ArrowLeft}
+                iconPosition="end"
+              >
+                {t('hero.startBtn')}
               </Button>
-              <Button to="/projects" variant="outline" size="lg" icon={PlayCircle} iconPosition="start">
-                مشاهده نمونه‌کارها
+              <Button
+                to="/projects"
+                variant="outline"
+                size="lg"
+                icon={PlayCircle}
+                iconPosition="start"
+              >
+                {t('hero.viewProjectsBtn')}
               </Button>
             </motion.div>
 
             <motion.div className="hero__mini-stats" variants={staggerItem}>
               <div className="hero__mini-stat">
-                <strong>۸۰+</strong>
-                <span>پروژه موفق</span>
+                <strong>{t('hero.miniStatProjectsValue')}</strong>
+                <span>{t('hero.statProjects')}</span>
               </div>
               <div className="hero__mini-stat">
-                <strong>۹۸٪</strong>
-                <span>رضایت مشتری</span>
+                <strong>{t('hero.miniStatSatisfactionValue')}</strong>
+                <span>{t('hero.statSatisfaction')}</span>
               </div>
               <div className="hero__mini-stat">
-                <strong>۶ سال</strong>
-                <span>تجربه</span>
+                <strong>{t('hero.miniStatExperienceValue')}</strong>
+                <span>{t('hero.statExperience')}</span>
               </div>
             </motion.div>
           </motion.div>
@@ -72,18 +93,22 @@ export default function Hero() {
                       key={i}
                       initial={{ height: 0 }}
                       animate={{ height: `${h}%` }}
-                      transition={{ delay: 0.5 + i * 0.08, duration: 0.6, ease: 'easeOut' }}
+                      transition={{
+                        delay: 0.5 + i * 0.08,
+                        duration: 0.6,
+                        ease: 'easeOut',
+                      }}
                     />
                   ))}
                 </div>
                 <div className="hero__info-row">
                   <div>
-                    <strong>۲.۴M</strong>
-                    درآمد ماهانه
+                    <strong>{t('hero.monthlyRevenueValue')}</strong>
+                    {t('hero.monthlyRevenue')}
                   </div>
                   <div>
-                    <strong>+۳۲٪</strong>
-                    رشد سالانه
+                    <strong>{t('hero.annualGrowthValue')}</strong>
+                    {t('hero.annualGrowth')}
                   </div>
                 </div>
               </div>
@@ -94,15 +119,19 @@ export default function Hero() {
               animate={{ y: [0, -8, 0] }}
               transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
             >
-              <Sparkles size={14} /> کیفیت تضمینی
+              <Sparkles size={14} /> {t('hero.floatQuality')}
             </motion.div>
 
             <motion.div
               className="hero__float hero__float--bottom"
               animate={{ y: [0, 8, 0] }}
-              transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut' }}
+              transition={{
+                duration: 3.5,
+                repeat: Infinity,
+                ease: 'easeInOut',
+              }}
             >
-              <TrendingUp size={14} /> رشد ۳۲٪
+              <TrendingUp size={14} /> {t('hero.floatGrowth')}
             </motion.div>
           </motion.div>
         </div>

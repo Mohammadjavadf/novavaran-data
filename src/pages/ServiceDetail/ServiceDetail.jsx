@@ -1,4 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { CheckCircle2, ArrowLeft, Phone } from 'lucide-react';
 import Container from '../../components/common/Container/Container';
 import Button from '../../components/common/Button/Button';
@@ -17,16 +18,17 @@ const serviceImages = {
 
 export default function ServiceDetail() {
   const { slug } = useParams();
+  const { t } = useTranslation();
   const service = services.find((s) => s.slug === slug);
 
   if (!service) {
     return (
       <Container>
         <div className="service-not-found">
-          <h1>خدمت یافت نشد</h1>
-          <p>خدمتی که دنبالش بودید پیدا نشد.</p>
+          <h1>{t('serviceDetail.notFound')}</h1>
+          <p>{t('serviceDetail.notFoundDesc')}</p>
           <Button to="/services" variant="primary" size="md">
-            بازگشت به خدمات
+            {t('serviceDetail.backToServices')}
           </Button>
         </div>
       </Container>
@@ -41,66 +43,60 @@ export default function ServiceDetail() {
     <>
       <section className="page-hero">
         <Container>
-          <span className="page-hero__eyebrow">خدمات ما</span>
-          <h1 className="page-hero__title">{service.title}</h1>
-          <p className="page-hero__desc">{service.short}</p>
+          <span className="page-hero__eyebrow">{t('services.title')}</span>
+          <h1 className="page-hero__title">{t(service.titleKey)}</h1>
+          <p className="page-hero__desc">{t(service.shortKey)}</p>
         </Container>
       </section>
 
       <section className="service-detail">
         <Container>
           <div className="service-detail__layout">
-<article className="service-detail__main">
-  <div className="service-detail__hero-media">
-    <SafeImage
-      src={heroImageUrl}
-      alt={service.title}
-      fallbackText={service.title}
-    />
-  </div>
+            <article className="service-detail__main">
+              <div className="service-detail__hero-media">
+                <SafeImage
+                  src={heroImageUrl}
+                  alt={t(service.titleKey)}
+                  fallbackText={t(service.titleKey)}
+                />
+              </div>
 
-  <h2>معرفی خدمت</h2>
-              <p>{service.description}</p>
-              <p>
-                تیم متخصص ما در نوآوران داده با تجربه چندین ساله در صنایع مختلف،
-                آماده ارائه راهکارهای سفارشی متناسب با نیاز شماست. از مرحله مشاوره
-                و تحلیل نیازها تا استقرار و پشتیبانی، همراه شما خواهیم بود.
-              </p>
+              <h2>{t('serviceDetail.intro')}</h2>
+              <p>{t(service.descKey)}</p>
+              <p>{t('serviceDetail.introExtra')}</p>
 
-              <h2>ویژگی‌های کلیدی</h2>
+              <h2>{t('serviceDetail.features')}</h2>
               <div className="service-detail__features">
-                {service.features.map((f) => (
-                  <div key={f} className="service-detail__feature">
+                {service.featuresKeys.map((key) => (
+                  <div key={key} className="service-detail__feature">
                     <CheckCircle2 size={18} />
-                    <span>{f}</span>
+                    <span>{t(key)}</span>
                   </div>
                 ))}
               </div>
 
-              <h2>چرا نوآوران داده؟</h2>
-              <p>
-                ما فقط یک ارائه‌دهنده خدمات نیستیم؛ شریک فناوری شما هستیم.
-                با رویکردی مشاوره‌ای، ابتدا نیازهای شما را عمیقاً درک می‌کنیم و
-                سپس راهکاری مقرون‌به‌صرفه، مقیاس‌پذیر و امن پیشنهاد می‌دهیم.
-              </p>
+              <h2>{t('serviceDetail.whyUs')}</h2>
+              <p>{t('serviceDetail.whyUsDesc')}</p>
             </article>
 
             <aside className="service-detail__sidebar">
               <div className="service-detail__sidebar-card">
-                <h4 className="service-detail__sidebar-title">سایر خدمات</h4>
+                <h4 className="service-detail__sidebar-title">
+                  {t('serviceDetail.otherServices')}
+                </h4>
                 <nav className="service-detail__other-list">
                   {others.map((o) => (
                     <Link key={o.slug} to={`/services/${o.slug}`}>
                       <ArrowLeft size={14} />
-                      {o.title}
+                      {t(o.titleKey)}
                     </Link>
                   ))}
                 </nav>
               </div>
 
               <div className="service-detail__contact-card">
-                <h4>مشاوره رایگان</h4>
-                <p>درباره پروژه‌تان با ما صحبت کنید.</p>
+                <h4>{t('serviceDetail.freeConsult')}</h4>
+                <p>{t('serviceDetail.freeConsultDesc')}</p>
                 <Button
                   to="/contact"
                   variant="primary"
@@ -109,7 +105,7 @@ export default function ServiceDetail() {
                   icon={Phone}
                   iconPosition="start"
                 >
-                  تماس با ما
+                  {t('serviceDetail.contactUs')}
                 </Button>
               </div>
             </aside>

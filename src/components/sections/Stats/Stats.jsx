@@ -1,9 +1,18 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import Container from '../../common/Container/Container';
-import { stats } from '../../../data/stats';
 import { staggerContainer, staggerItem } from '../../../utils/animations';
 
 export default function Stats() {
+  const { t } = useTranslation();
+
+  const stats = [
+    { value: t('stats.projectsValue'), label: t('stats.projects') },
+    { value: t('stats.clientsValue'), label: t('stats.clients') },
+    { value: t('stats.expertsValue'), label: t('stats.experts') },
+    { value: t('stats.satisfactionValue'), label: t('stats.satisfaction') },
+  ];
+
   return (
     <section className="stats">
       <Container>
